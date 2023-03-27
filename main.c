@@ -13,6 +13,8 @@ int main(void)
 	_printf("%s\n", "this will work");
 	_printf("%c\n", 's');
 	_printf("%d\n", 121);
-	_printf("%i\n", 21);
+	_printf("%i\n", -291);
+	_printf("%i\n", 10000);
+	_printf("%d\n", 0);
 	return (0);
 }

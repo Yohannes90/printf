@@ -1,36 +1,6 @@
 #include "main.h"
 
 /**
- * printnumber - prints number
- * @n: number to be printed
- *
- * Return: count
- */
-int printnumber(int n)
-{
-	int count;
-
-	count = 0;
-	if (n < 0)
-	{
-		_putchar('-');
-		n = -n;
-		count++;
-	}
-	if (n == 0)
-	{
-		_putchar('0');
-		count++;
-	}
-	if (n / 10)
-	{
-		count++;
-		printnumber(n / 10);
-	}
-	_putchar(n % 10 + '0');
-	return (count);
-}
-/**
  * print_num - prints numbers(i, d)
  * @n: number to print
  *
@@ -38,9 +8,42 @@ int printnumber(int n)
  */
 int print_num(va_list n)
 {
-	int count, num;
+	int len, pow, j, digit, i, count, num;
 
-	num = va_arg(n, int);
-	count = printnumber(num);
+	count = 0;
+	i = num = va_arg(n, int);
+	if (i != 0)
+	{
+		if (i < 0)
+		{
+			_putchar('-');
+			count++;
+		}
+		len = 0;
+		while (num != 0)
+		{
+			num /= 10;
+			len++;
+		}
+		pow = 1;
+		for (j = 1; j < len; j++)
+			pow *= 10;
+		for (j = 1; j <= len; j++)
+		{
+			digit = i / pow;
+			if (i < 0)
+				_putchar((digit * -1) + 48);
+			else
+				_putchar(digit + '0');
+			count++;
+			i -= digit * pow;
+			pow /= 10;
+		}
+	}
+	else
+	{
+		_putchar('0');
+		return (1);
+	}
 	return (count);
 }
