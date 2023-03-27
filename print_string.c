@@ -1,10 +1,13 @@
 #include "main.h"
+<<<<<<< HEAD
 
+=======
+>>>>>>> 54088cd0652b8b8bc1eb20e5d23785d0db758974
 /**
  * print_string - prints string
  * @s: string to be printed
  *
- * Return: 1;
+ * Return: number of characters printed
  */
 int print_string(va_list s)
 {
