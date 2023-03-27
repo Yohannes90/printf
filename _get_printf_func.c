@@ -2,7 +2,7 @@
 
 /**
  * get_printf_func - select corresponding functon to format specified
- * @ch: given format
+ * @format: given format
  *
  * Return: pointer to corresponding function of format specifier
  */
@@ -12,8 +12,10 @@ int (*get_printf_func(const char *format))(va_list)
 	print_t format_spec[] = {
 		{"c", print_char},
 		{"s", print_string},
-		/*{"d", print_num},
-		{"i", print_num}*/
+		/*
+		 * {"d", print_num},
+		*{"i", print_num}
+		*/
 		{NULL, NULL}
 	};
 	while (format_spec[i].conv_spec)
