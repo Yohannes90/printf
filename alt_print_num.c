@@ -6,31 +6,33 @@
  * Return: number of character printed
  */
 
-int print_num(va_list list)
+int print_number(int n)
 {
-	int len;
-	int num = va_arg(list, int);
-
-	len = printnumber(num);
-	return (len);
-}
-
-int printnumber(int n)
-{
-	unsigned int i = n;
+	/*
+	 * unsigned int i = n;
+	 */
 	int num_length = 0;
 
 	if (n < 0)
 	{
 		num_length += _putchar(45);
-		i = -i;
+		n = -n;
 	}
-	if (i / 10)
+	if (n / 10)
 	{
-		print_number(i / 10);
+		print_number(n / 10);
 	}
-	num_length += _putchar(i % 10 + '0');
+	num_length += _putchar(n % 10 + '0');
 	return (num_length);
 	
 
 }
+int print_num(va_list list)
+{
+        int len;
+        int num = va_arg(list, int);
+
+        len = print_number(num);
+        return (len);
+}
+
