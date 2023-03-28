@@ -34,9 +34,9 @@ int print_num(va_list n)
 	{
 		digit = num / power;
 		_putchar(digit + '0');
-		count++;
 		num -= digit * power;
 		power /= 10;
+		count++;
 	}
-	return (count);
+	return (count - 1);
 }
