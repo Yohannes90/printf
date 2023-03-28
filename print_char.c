@@ -10,3 +10,8 @@ int print_char(va_list c)
 	_putchar(va_arg(c, int));
 	return (1);
 }
+int print_percent(__attribute__((unused)) va_list p)
+{
+	_putchar('%');
+	return (1);
+}
