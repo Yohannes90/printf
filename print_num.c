@@ -8,7 +8,7 @@
  */
 int print_numbers(int x)
 {
-	unsigned int i;
+	unsigned int i = x;
 	int len = 0;
 
 	if (x < 0)
@@ -16,7 +16,6 @@ int print_numbers(int x)
 		len += _putchar(45);
 		i = -x;
 	}
-	i = x;
 	if (i / 10)
 	{
 		len += print_numbers(i / 10);
