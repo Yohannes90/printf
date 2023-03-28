@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * print_num - prints integer or double
- * @list: arguments list
+ * print_number - prints integer or double
+ * @n: number to be printed
+ *
  * Return: number of character printed
  */
-
 int print_number(int n)
 {
 	/*
@@ -25,15 +25,18 @@ int print_number(int n)
 	}
 	_putchar(n % 10 + '0');
 	return (num_length + 1);
-	
-
 }
+/**
+ * print_num - prints argument
+ * @list: argument list
+ *
+ * Return: length
+ */
 int print_num(va_list list)
 {
-        int len;
-        int num = va_arg(list, int);
+	int len;
+	int num = va_arg(list, int);
 
-        len = print_number(num);
-        return (len);
+	len = print_number(num);
+	return (len);
 }
-
