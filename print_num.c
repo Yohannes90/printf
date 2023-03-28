@@ -6,8 +6,29 @@
  *
  * Return: count(number of text)
  */
+int print_numbers(int x)
+{
+	unsigned int i;
+	int len = 0;
+
+	if (x < 0)
+	{
+		len += _putchar(45);
+		i = -x;
+	}
+	i = x;
+	if (i / 10)
+	{
+		len += print_numbers(i / 10);
+	}
+	len += _putchar((i % 10) + '0');
+	return (len);
+}
 int print_num(va_list n)
 {
+	int l = va_arg(n, int);
+	int count = print_numbers(l);
+	/*
 	int num, count, power, digit, temp;
 
 	count = 0;
@@ -39,5 +60,7 @@ int print_num(va_list n)
 		num -= digit * power;
 		power /= 10;
 	}
+	*/
 	return (count);
 }
+
