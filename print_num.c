@@ -30,12 +30,12 @@ int print_num(va_list n)
 	{
 		temp /= 10;
 		power *= 10;
-		count++;
 	}
 	while (power > 0)
 	{
 		digit = num / power;
 		_putchar(digit + '0');
+		count++;
 		num -= digit * power;
 		power /= 10;
 	}
