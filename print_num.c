@@ -27,15 +27,29 @@ int print_number(int n)
 	return (num_length + 1);
 }
 /**
- * print_num - prints argument
- * @list: argument list
+ * print_decimal - prints decimal
+ * @d: list
  *
  * Return: length
  */
-int print_num(va_list list)
+int print_decimal(va_list d)
 {
 	int len;
-	int num = va_arg(list, int);
+	int num = va_arg(d, int);
+
+	len = print_number(num);
+	return (len);
+}
+/**
+ * print_int - prints integer
+ * @i: list
+ *
+ * Return: length
+ */
+int print_int(va_list i)
+{
+	int len;
+	int num = va_arg(i, int);
 
 	len = print_number(num);
 	return (len);
