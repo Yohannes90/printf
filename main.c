@@ -16,7 +16,7 @@ int main(void)
 	_printf("%i\n", -291);
 	_printf("%i\n", 10000);
 	_printf("%d\n", -43430);
-	_printf("%u\n", 430);
+/*	_printf("%u\n", 430);*/
 	_printf("%b\n", 98);
 	return (0);
 }

@@ -25,19 +25,18 @@ int print_num(va_list n)
 		count++;
 	}
 	temp = num;
-	while (temp > 0)
+	while (temp > 9)
 	{
 		temp /= 10;
 		power *= 10;
 	}
-	power /= 10;
 	while (power > 0)
 	{
 		digit = num / power;
 		_putchar(digit + '0');
+		count++;
 		num -= digit * power;
 		power /= 10;
-		count++;
 	}
 	return (count);
 }
