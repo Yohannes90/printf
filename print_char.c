@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * print_char - print a character to the console
  * @c: char to print
@@ -10,6 +11,13 @@ int print_char(va_list c)
 	_putchar(va_arg(c, int));
 	return (1);
 }
+
+/**
+ * print_percent - prints %
+ * @p: list
+ *
+ * Return: 1(number of printed char)
+ */
 int print_percent(__attribute__((unused)) va_list p)
 {
 	_putchar('%');
