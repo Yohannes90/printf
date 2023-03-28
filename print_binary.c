@@ -10,7 +10,7 @@
 
 int to_binary(unsigned int n)
 {
-	int count = 0
+	int count = 0;
 	
 	if (n == 0)
 	{
