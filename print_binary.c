@@ -24,5 +24,5 @@ int print_binary(va_list b)
 	unsigned int d = va_arg(b, unsigned int);
 	int len = to_binary(d);
 
-	return (len);
+	return (len + 1);
 }
