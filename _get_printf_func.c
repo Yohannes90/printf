@@ -11,7 +11,6 @@ int (*get_printf_func(const char *format))(va_list)
 	unsigned int i = 0;
 	print_t format_spec[] = {
 		{"c", print_char},
-		{"%", print_percent},
 		{"s", print_string},
 		{"d", print_num},
 		{"i", print_num}
