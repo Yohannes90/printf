@@ -11,7 +11,7 @@
  */
 
 
-int to_binary(unsigned int n)
+void to_binary(unsigned int n)
 {
 	if (num / 2)
 	{
