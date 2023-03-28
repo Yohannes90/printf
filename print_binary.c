@@ -7,13 +7,14 @@
  * Return: count(number of text)
  */
 
-int to_binary(unsigned int n)
+void to_binary(unsigned int n, int *len)
 {
 	if (n / 2)
 	{
 		to_binary(n / 2, len);
 	}
 	_putchar((n % 2) + '0');
+	++*len;
 }
 
 int print_binary(va_list b)
