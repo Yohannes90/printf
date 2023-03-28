@@ -20,7 +20,7 @@ int to_binary(int n)
 }
 int print_binary(va_list b)
 {
-	int d = va_args(b, int);
+	int d = va_arg(b, int);
 	int len = to_binary(d);
 
 	return (len);
