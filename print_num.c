@@ -19,7 +19,7 @@ int print_numbers(int x)
 	i = x;
 	if (i / 10)
 	{
-		print_numbers(i / 10);
+		len += print_numbers(i / 10);
 	}
 	len += _putchar((i % 10) + '0');
 	return (len);
