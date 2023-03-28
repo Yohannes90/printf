@@ -1,5 +1,8 @@
 #include "main.h"
+<<<<<<< HEAD
+=======
 
+>>>>>>> c2788960baf8e1203418b4826613879aa3dc7e42
 /**
  * print_binary -converts unsigned int to binary
  * @b: list of arguments
@@ -10,31 +13,18 @@
 
 int to_binary(unsigned int n)
 {
-	int count = 0;
-
-	for (int i = sizeof(n) * CHAR_BIT - 1; i >= 0; i--)
+	if (num / 2)
 	{
-		_putchar((n & (1u << i)) ? '1' : '0');
-		count++;
+		to_binary(num / 2, len);
 	}
-	return count;
-	
-	if (n == 0)
-	{
-		count += _putchar('0');
-		
-	}
-	if (n % 2)
-	{
-		to_binary(n / 2);
-	}
-	return (count);
-
+	_putchar((num % 2) + '0');
+	++*len;
 }
 int print_binary(va_list b)
 {
 	unsigned int num = va_arg(b, unsigned int);
-	int len = to_binary(num);
+	int len = 0;
+	to_binary(num, &len);
 
 	return (len);
 }
