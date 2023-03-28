@@ -1,66 +1,42 @@
 #include "main.h"
 
 /**
- * print_int - prints integer, decimal
- * @i: list
+ * print_num - prints numbers(i, d)
+ * @n: number to print
  *
- * Return: number of character printed
+ * Return: count(number of text)
  */
-int print_int(va_list i)
+int print_num(va_list n)
 {
-	int j, k, n, count;
-	int l = va_arg(i, int);
+	int num, count, power, digit, temp;
 
-	if (l < 0)
+	count = digit = 0;
+	power = 1;
+	num = va_arg(n, int);
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	if (num < 0)
 	{
 		_putchar('-');
-		n = l * -1;
-		count = 1;
-	}
-	else
-	{
-		n = l;
-		count = 0;
-	}
-	j = 1;
-	while (n / j > 9)
-	{
-		j *= 10;
-	}
-	while (j != 0)
-	{
-		k = n / j;
-		_putchar(k + '0');
-		n %= j;
-		j /= 10;
+		num = -num;
 		count++;
 	}
-	return (count);
-}
-
-/**
- * print_unsigned_int - prints decimal
- * @u: list
- *
- * Return: count of character
- */
-int print_unsigned_int(va_list u)
-{
-	int count = 0;
-	unsigned int j, k, n;
-
-	n = va_arg(u, unsigned int);
-	j = 1;
-	while (n / j > 9)
+	temp = num;
+	while (temp > 0)
 	{
-		j *= 10;
+		temp /= 10;
+		power *= 10;
 	}
-	while (j != 0)
+	power /= 10;
+	while (power > 0)
 	{
-		k = n / j;
-		_putchar(k + '0');
-		n %= j;
-		j /= 10;
+		digit = num / power;
+		_putchar(digit + '0');
+		num -= digit * power;
+		power /= 10;
 		count++;
 	}
 	return (count);
