@@ -13,8 +13,9 @@ int (*get_printf_func(const char *format))(va_list)
 		{"c", print_char},
 		{"s", print_string},
 		{"d", print_num},
-		{"i", print_num}
+		{"i", print_num},
 	/*	{"u", print_unsigned_int}*/
+		{NULL, NULL}
 	};
 	while (format_spec[i].conv_spec)
 	{
