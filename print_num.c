@@ -10,7 +10,8 @@ int print_num(va_list n)
 {
 	int num, count, power, digit, temp;
 
-	count = digit = 0;
+	count = 0;
+	digit = 0;
 	power = 1;
 	num = va_arg(n, int);
 	if (num == 0)
@@ -29,6 +30,7 @@ int print_num(va_list n)
 	{
 		temp /= 10;
 		power *= 10;
+		count++;
 	}
 	while (power > 0)
 	{
@@ -36,7 +38,6 @@ int print_num(va_list n)
 		_putchar(digit + '0');
 		num -= digit * power;
 		power /= 10;
-		count++;
 	}
-	return (count - 1);
+	return (count);
 }
