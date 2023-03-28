@@ -15,15 +15,16 @@ int print_number(int n)
 
 	if (n < 0)
 	{
-		num_length += _putchar(45);
+		_putchar('-');
+		num_length++;
 		n = -n;
 	}
 	if (n / 10)
 	{
-		print_number(n / 10);
+		num_length += print_number(n / 10);
 	}
-	num_length += _putchar(n % 10 + '0');
-	return (num_length);
+	_putchar(n % 10 + '0');
+	return (num_length + 1);
 	
 
 }
