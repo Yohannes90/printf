@@ -9,20 +9,19 @@
 
 int to_binary(unsigned int n)
 {
-	int count = 0;
-
 	if (n / 2)
 	{
-		count += to_binary(n / 2);
+		to_binary(n / 2, len);
 	}
-	count += _putchar((n % 2) + '0');
-	return (count);
+	_putchar((n % 2) + '0');
 }
 
 int print_binary(va_list b)
 {
 	unsigned int d = va_arg(b, unsigned int);
-	int len = to_binary(d);
+	int len = 0;
+	
+	to_binary(d, &len);
 
-	return (len + 1);
+	return (len);
 }
