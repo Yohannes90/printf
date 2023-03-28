@@ -12,8 +12,9 @@ int (*get_printf_func(const char *format))(va_list)
 	print_t format_spec[] = {
 		{"c", print_char},
 		{"s", print_string},
-		{"d", print_decimal},
-		{"i", print_int}
+		{"d", print_int},
+		{"i", print_int},
+		{"u", print_unsigned_int}
 	};
 	while (format_spec[i].conv_spec)
 	{
