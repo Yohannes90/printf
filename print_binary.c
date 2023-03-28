@@ -24,5 +24,5 @@ int print_binary(va_list b)
 	
 	to_binary(d, &len);
 
-	return (len);
+	return (len - 1);
 }
