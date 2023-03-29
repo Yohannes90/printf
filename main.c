@@ -13,7 +13,8 @@ int main(void)
 	_printf("%%\n");
 
 	_printf("%s\n", "9");
-	_printf("%s\n", "thi work");
+	_printf("%s\n", "this will work");
+	_printf("%r\n", "this will work");
 	_printf("%R\n", "AaBbCcNnOoPp");
 
 	_printf("%d\n", 121);
