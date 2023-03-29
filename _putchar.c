@@ -11,6 +11,7 @@ int _putchar(char c)
 {
 	static char buf[1024];
 	static int i;
+
 	buf[i++] = c;
 	if (i == 1024 || c == '\n')
 	{
