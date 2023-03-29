@@ -14,6 +14,7 @@ int main(void)
 
 	_printf("%s\n", "9");
 	_printf("%s\n", "thi work");
+	_printf("%s\n", "Best\nSchool");
 
 	_printf("%d\n", 121);
 	_printf("%d\n", -43430);

@@ -9,5 +9,13 @@
  */
 int _putchar(char c)
 {
-	return (write(1, &c, 1));
+	static char buf[1024];
+	static int i;
+	buf[i++] = c;
+	if (i == 1024 || c == '\n')
+	{
+		(write(1, buf, i));
+		i = 0;
+	}
+	return (1);
 }
