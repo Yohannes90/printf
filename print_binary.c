@@ -26,7 +26,7 @@ int to_binary(unsigned int n)
 	{
 		count += to_binary(n / 2);
 	}
-	count += to_binary(n / 2);
+	count += _putchar((n % 2) + '0');
 	return (count);
 }
 int print_binary(va_list b)
