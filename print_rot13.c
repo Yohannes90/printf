@@ -9,19 +9,19 @@
 int print_rot13(va_list R)
 {
 	int i, j, count;
-	char *s;
-	char data[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char *str;
+	char data[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz";
+	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLM nopqrstuvwxyzabcdefghijklm";
 
 	count = 0;
-	s = va_arg(R, char *);
-	if (s == NULL)
-		s = "(null)";
-	for (i = 0; s[i] != '\0'; i++)
+	str = va_arg(R, char *);
+	if (str == NULL)
+		str = "(null)";
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (j = 0; j < 52; j++)
+		for (j = 0; data[i] != '\0'; j++)
 		{
-			if (s[i] == data[j])
+			if (str[i] == data[j])
 			{
 				_putchar(datarot[j]);
 				count++;
