@@ -23,4 +23,6 @@ int print_string(va_list s);
 int print_num(va_list n);
 int print_binary(va_list b);
 
+int print_rot13(va_list R);
+
 #endif /* MAIN_H */

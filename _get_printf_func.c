@@ -15,6 +15,7 @@ int (*get_printf_func(const char *format))(va_list)
 		{"d", print_num},
 		{"i", print_num},
 		{"b", print_binary},
+		{"R", print_rot13},
 		{NULL, NULL}
 	};
 	while (format_spec[i].conv_spec)
